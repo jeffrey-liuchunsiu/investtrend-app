@@ -51,6 +51,7 @@ export function loginAction(email, password, navigate) {
   return (dispatch) => {
     login(email, password)
       .then((response) => {
+        console.log(response.data);
         saveTokenInLocalStorage(response.data);
         runLogoutTimer(dispatch, response.data.expiresIn * 1000, navigate);
         dispatch(loginConfirmedAction(response.data));

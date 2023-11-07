@@ -1,22 +1,22 @@
 import React, { useContext } from "react";
 
 /// React router dom
-import {  Routes, Route, Outlet  } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 
 /// Css
 import "./index.css";
 import "./chart.css";
 import "./step.css";
 
-
 /// Layout
 import Nav from "./layouts/nav";
 import Footer from "./layouts/Footer";
-import ScrollToTop from './pages/ScrollToTop';
+import ScrollToTop from "./pages/ScrollToTop";
 
 /// Dashboard
 import Home from "./components/Dashboard/Home";
-import Wallet from "./components/Dashboard/Wallet";
+import Strategy from "./components/Dashboard/Strategy";
+import Wallet from "./components/Dashboard/WalletOriginal";
 import Transactions from "./components/Dashboard/Transactions";
 import CoinDetails from "./components/Dashboard/CoinDetails";
 import Portofolio from "./components/Dashboard/Portofolio";
@@ -24,6 +24,7 @@ import MarketCapital from "./components/Dashboard/MarketCapital";
 //
 ////Theme
 import DashboradLight from "./components/Dashboard/Demo/DashboradLight";
+import MarketScan from "./components/Dashboard/Demo/MarketScan";
 import Theme1 from "./components/Dashboard/Demo/Theme1";
 import Theme2 from "./components/Dashboard/Demo/Theme2";
 import Theme3 from "./components/Dashboard/Demo/Theme3";
@@ -32,7 +33,6 @@ import Theme5 from "./components/Dashboard/Demo/Theme5";
 import Theme6 from "./components/Dashboard/Demo/Theme6";
 import Theme7 from "./components/Dashboard/Demo/Theme7";
 import Theme8 from "./components/Dashboard/Demo/Theme8";
-
 
 /// App
 import AppProfile from "./components/AppsMenu/AppProfile/AppProfile";
@@ -130,102 +130,102 @@ const Markup = () => {
     { url: "", element: <Home /> },
     { url: "dashboard", element: <Home /> },
     { url: "my-wallets", element: <Wallet /> },
+    { url: "my-strategies", element: <Strategy /> },
     { url: "transactions", element: <Transactions /> },
-    { url: "coin-details", element: <CoinDetails/> },
-    { url: "portofolio", element: <Portofolio/> },
-    { url: "market-capital", element: <MarketCapital/> },
-   
-   //themes
-    { url: "dashboard-light", element: <DashboradLight/> },
-    { url: "dark-sidebar", element: <Theme1/> },
-    { url: "modern-sidebar", element: <Theme2/> },
-    { url: "horizontal-sidebar", element: <Theme3/> },
-    { url: "compact-sidebar", element: <Theme4/> },
-    { url: "icon-hover", element: <Theme5/> },
-    { url: "mini-sidebar", element: <Theme6/> },
-    { url: "dark-mini", element: <Theme7/> },
-    { url: "full-sidebar", element: <Theme8/> },  
+    { url: "coin-details", element: <CoinDetails /> },
+    { url: "portofolio", element: <Portofolio /> },
+    { url: "market-capital", element: <MarketCapital /> },
+
+    //themes
+    { url: "dashboard-light", element: <DashboradLight /> },
+    { url: "market-scan", element: <MarketScan /> },
+    { url: "dark-sidebar", element: <Theme1 /> },
+    { url: "modern-sidebar", element: <Theme2 /> },
+    { url: "horizontal-sidebar", element: <Theme3 /> },
+    { url: "compact-sidebar", element: <Theme4 /> },
+    { url: "icon-hover", element: <Theme5 /> },
+    { url: "mini-sidebar", element: <Theme6 /> },
+    { url: "dark-mini", element: <Theme7 /> },
+    { url: "full-sidebar", element: <Theme8 /> },
 
     /// Apps
     { url: "app-profile", element: <AppProfile /> },
-    { url: "post-details", element: <PostDetails/> },
-    { url: "contact-list", element: <ContactPage/> },
-    { url: "contact-card", element: <ContactCard/> },
-    { url: "project-card", element: <ProjectCard/> },
-    { url: "email-compose", element: <Compose/> },
-    { url: "email-inbox", element: <Inbox/> },
-    { url: "email-read", element: <Read/> },
-    { url: "app-calender", element: <Calendar/> },
+    { url: "post-details", element: <PostDetails /> },
+    { url: "contact-list", element: <ContactPage /> },
+    { url: "contact-card", element: <ContactCard /> },
+    { url: "project-card", element: <ProjectCard /> },
+    { url: "email-compose", element: <Compose /> },
+    { url: "email-inbox", element: <Inbox /> },
+    { url: "email-read", element: <Read /> },
+    { url: "app-calender", element: <Calendar /> },
 
-    
     /// Shop
-    { url: "ecom-product-grid", element: <ProductGrid/> },
-    { url: "ecom-product-list", element: <ProductList/> },
-    { url: "ecom-product-detail", element: <ProductDetail/> },
-    { url: "ecom-product-order", element: <ProductOrder/> },
-    { url: "ecom-checkout", element: <Checkout/> },
-    { url: "ecom-invoice", element: <Invoice/> },
-    { url: "ecom-product-detail", element: <ProductDetail/> },
-    { url: "ecom-customers", element: <Customers/> },
+    { url: "ecom-product-grid", element: <ProductGrid /> },
+    { url: "ecom-product-list", element: <ProductList /> },
+    { url: "ecom-product-detail", element: <ProductDetail /> },
+    { url: "ecom-product-order", element: <ProductOrder /> },
+    { url: "ecom-checkout", element: <Checkout /> },
+    { url: "ecom-invoice", element: <Invoice /> },
+    { url: "ecom-product-detail", element: <ProductDetail /> },
+    { url: "ecom-customers", element: <Customers /> },
 
     /// Chart
-    { url: "chart-sparkline", element: <SparklineChart/> },
-	  { url: "chart-chartjs", element: <ChartJs/> },
-	//{ url: "chart-chartist", element: Chartist },
-    { url: "chart-apexchart", element: <ApexChart/> },
-    { url: "chart-rechart", element: <RechartJs/> },
+    { url: "chart-sparkline", element: <SparklineChart /> },
+    { url: "chart-chartjs", element: <ChartJs /> },
+    //{ url: "chart-chartist", element: Chartist },
+    { url: "chart-apexchart", element: <ApexChart /> },
+    { url: "chart-rechart", element: <RechartJs /> },
 
     /// Bootstrap
-    { url: "ui-alert", element: <UiAlert/> },
-    { url: "ui-badge", element: <UiBadge/> },
-    { url: "ui-button", element: <UiButton/> },
-    { url: "ui-modal", element: <UiModal/> },
-    { url: "ui-button-group", element: <UiButtonGroup/> },
-    { url: "ui-accordion", element: <UiAccordion/> },
+    { url: "ui-alert", element: <UiAlert /> },
+    { url: "ui-badge", element: <UiBadge /> },
+    { url: "ui-button", element: <UiButton /> },
+    { url: "ui-modal", element: <UiModal /> },
+    { url: "ui-button-group", element: <UiButtonGroup /> },
+    { url: "ui-accordion", element: <UiAccordion /> },
     { url: "ui-list-group", element: <UiListGroup /> },
-    { url: "ui-card", element: <UiCards/> },
-    { url: "ui-carousel", element: <UiCarousel/> },
-    { url: "ui-dropdown", element: <UiDropDown/> },
-    { url: "ui-popover", element: <UiPopOver/> },
-    { url: "ui-progressbar", element: <UiProgressBar/> },
-    { url: "ui-tab", element: <UiTab/> },
-    { url: "ui-pagination", element: <UiPagination/> },
-    { url: "ui-typography", element: <UiTypography/> },
-    { url: "ui-grid", element: <UiGrid/> },
+    { url: "ui-card", element: <UiCards /> },
+    { url: "ui-carousel", element: <UiCarousel /> },
+    { url: "ui-dropdown", element: <UiDropDown /> },
+    { url: "ui-popover", element: <UiPopOver /> },
+    { url: "ui-progressbar", element: <UiProgressBar /> },
+    { url: "ui-tab", element: <UiTab /> },
+    { url: "ui-pagination", element: <UiPagination /> },
+    { url: "ui-typography", element: <UiTypography /> },
+    { url: "ui-grid", element: <UiGrid /> },
 
     /// Plugin
-    { url: "uc-select2", element: <Select2/> },
+    { url: "uc-select2", element: <Select2 /> },
     //{ url: "uc-nestable", element: Nestable },
     //{ url: "uc-noui-slider", element: MainNouiSlider },
-    { url: "uc-sweetalert", element: <MainSweetAlert/> },
-    { url: "uc-toastr", element: <Toastr/> },
-    { url: "map-jqvmap", element: <JqvMap/> },
-    { url: "uc-lightgallery", element: <Lightgallery/> },
+    { url: "uc-sweetalert", element: <MainSweetAlert /> },
+    { url: "uc-toastr", element: <Toastr /> },
+    { url: "map-jqvmap", element: <JqvMap /> },
+    { url: "uc-lightgallery", element: <Lightgallery /> },
 
-	  ///Redux
-	  { url: "todo", element: <Todo/> },
-	
+    ///Redux
+    { url: "todo", element: <Todo /> },
+
     /// Widget
-    { url: "widget-basic", element: <Widget/> },
-
+    { url: "widget-basic", element: <Widget /> },
 
     /// Form
-	
-    { url: "form-element", element: <Element/> },
-	  { url: "form-wizard", element: <Wizard/> },
-	  { url: "form-ckeditor", element: <CkEditor/> },
-    { url: "form-pickers", element: <Pickers/> },
-    { url: "form-validation", element: <FormValidation/> },
+
+    { url: "form-element", element: <Element /> },
+    { url: "form-wizard", element: <Wizard /> },
+    { url: "form-ckeditor", element: <CkEditor /> },
+    { url: "form-pickers", element: <Pickers /> },
+    { url: "form-validation", element: <FormValidation /> },
 
     /// table
-	  { url: 'table-filtering', element: <FilteringTable/> },
-    { url: 'table-sorting', element: <SortingTable/> },
-    { url: "table-datatable-basic", element: <DataTable/> },
-    { url: "table-bootstrap-basic", element: <BootstrapTable/> },
+    { url: "table-filtering", element: <FilteringTable /> },
+    { url: "table-sorting", element: <SortingTable /> },
+    { url: "table-datatable-basic", element: <DataTable /> },
+    { url: "table-bootstrap-basic", element: <BootstrapTable /> },
 
     /// pages
     //{ url: "page-register", element: <Registration /> },
-    { url: "page-lock-screen", element: <LockScreen/> },
+    { url: "page-lock-screen", element: <LockScreen /> },
     //{ url: "page-login", element: <Login /> },
     { url: "page-forgot-password", element: <ForgotPassword /> },
     { url: "page-error-400", element: <Error400 /> },
@@ -238,21 +238,20 @@ const Markup = () => {
   path = path.split("/");
   path = path[path.length - 1];
   let pagePath = path.split("-").includes("page");
-  
-    setTimeout(function(){
-		  let btn = document.querySelector("#main-wrapper");
-		  let metisMenu = document.querySelector(".metismenu");
-		  metisMenu.addEventListener("mouseenter", toggleFunc1);
-		  metisMenu.addEventListener("mouseleave", toggleFunc2);
-      function toggleFunc1() {
-        return btn.classList.add("iconhover-toggle");
-      }
-      function toggleFunc2() {
-        return btn.classList.remove("iconhover-toggle");
-      }	
-	  }, 200);
-  
-  
+
+  setTimeout(function () {
+    let btn = document.querySelector("#main-wrapper");
+    let metisMenu = document.querySelector(".metismenu");
+    metisMenu.addEventListener("mouseenter", toggleFunc1);
+    metisMenu.addEventListener("mouseleave", toggleFunc2);
+    function toggleFunc1() {
+      return btn.classList.add("iconhover-toggle");
+    }
+    function toggleFunc2() {
+      return btn.classList.remove("iconhover-toggle");
+    }
+  }, 200);
+
   return (
     <>
       {/* <div
@@ -283,46 +282,44 @@ const Markup = () => {
         {!pagePath && <Footer />}
       </div> */}
 
-
-
-        <Routes>
-            <Route path='page-lock-screen' element= {<LockScreen />} />
-            <Route path='page-error-400' element={<Error400/>} />
-            <Route path='page-error-403' element={<Error403/>} />
-            <Route path='page-error-404' element={<Error404/>} />
-            <Route path='page-error-500' element={<Error500/>} />
-            <Route path='page-error-503' element={<Error503/>} />
-            <Route  element={<MainLayout />} > 
-                {allroutes.map((data, i) => (
-                  <Route
-                    key={i}
-                    exact
-                    path={`${data.url}`}
-                    element={data.element}
-                  />
-                ))}
-            </Route>
-        </Routes>
-        <Setting />
-	      <ScrollToTop />
+      <Routes>
+        <Route path="page-lock-screen" element={<LockScreen />} />
+        <Route path="page-error-400" element={<Error400 />} />
+        <Route path="page-error-403" element={<Error403 />} />
+        <Route path="page-error-404" element={<Error404 />} />
+        <Route path="page-error-500" element={<Error500 />} />
+        <Route path="page-error-503" element={<Error503 />} />
+        <Route element={<MainLayout />}>
+          {allroutes.map((data, i) => (
+            <Route key={i} exact path={`${data.url}`} element={data.element} />
+          ))}
+        </Route>
+      </Routes>
+      <Setting />
+      <ScrollToTop />
     </>
   );
 };
 
-function MainLayout(){
+function MainLayout() {
   const { menuToggle } = useContext(ThemeContext);
   return (
-    <div id="main-wrapper" className={`show ${ menuToggle ? "menu-toggle" : ""}`}>  
+    <div
+      id="main-wrapper"
+      className={`show ${menuToggle ? "menu-toggle" : ""}`}
+    >
       <Nav />
-      <div className="content-body" style={{ minHeight: window.screen.height - 60 }}>
-          <div className="container-fluid">
-            <Outlet />                
-          </div>
+      <div
+        className="content-body"
+        style={{ minHeight: window.screen.height - 60 }}
+      >
+        <div className="container-fluid">
+          <Outlet />
+        </div>
       </div>
       <Footer />
     </div>
-  )
-
-};
+  );
+}
 
 export default Markup;

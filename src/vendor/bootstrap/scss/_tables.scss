@@ -2,6 +2,21 @@
 // Basic Bootstrap table
 //
 
+// Maximum breakpoint width.
+// The maximum value is reduced by 0.02px to work around the limitations of
+// `min-` and `max-` prefixes and viewports with fractional widths.
+// See https://www.w3.org/TR/mediaqueries-4/#mq-min-max
+// Uses 0.02px rather than 0.01px to work around a current rounding bug in Safari.
+// See https://bugs.webkit.org/show_bug.cgi?id=178261
+//
+//    >> breakpoint-max(md, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px))
+//    767.98px
+@function breakpoint-max-modified($name, $breakpoints: $grid-breakpoints) {
+  $max: map-get($breakpoints, $name);
+  $result: if($max and $max > 0, $max - 0.02px, null);
+  @return $max;
+}
+
 .table {
   --#{$variable-prefix}table-bg: #{$table-bg};
   --#{$variable-prefix}table-accent-bg: #{$table-accent-bg};
@@ -42,8 +57,82 @@
   > :not(:first-child) {
     border-top: (2 * $table-border-width) solid $table-group-separator-color;
   }
+
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .responsive-row {
+    display: flex;
+    // flex-wrap: wrap;
+  }
+  
+  .responsive-row .table-col-12 {
+    // flex: 1 0 100%;
+    flex: 0 0 auto;
+    // width: 200px; /* Optional specified width */
+  }
+
+  /* Media query for responsive behavior */
+  // @media (max-width: 768px) {
+  //   .responsive-row td {
+  //     flex-basis: 100%;
+  //   }
+  // }
+
+  // @each $breakpoint in map-keys($grid-breakpoints) {
+  //   $max: breakpoint-max($breakpoint, $grid-breakpoints);
+  
+  //   @include media-breakpoint-down($breakpoint) {
+  //     .table-container {
+  //       // max-width: if($max, $max, 100%);
+  //       width: 100%;
+  //       overflow: hidden; /* Hide any content that exceeds the container's width */
+  //       .table {
+  //         width: 100%; /* Make the table occupy the full width of its parent container */
+  //         table-layout: fixed; /* Prevent the table from adjusting column widths automatically */
+  //       }
+  //     }
+  //   }
+  // }
+
+  .table-container {
+    max-width: 100%; /* Set the maximum width to 100% of the parent container */
+    overflow: hidden; /* Hide any content that exceeds the container's width */
+
+    .table {
+      width: 100%; /* Make the table occupy the full width of its parent container */
+      table-layout: fixed; /* Prevent the table from adjusting column widths automatically */
+    }
+  }
+  
+  // .outer-container .table {
+  //   width: 100%; /* Make the table occupy the full width of its parent container */
+  //   table-layout: fixed; /* Prevent the table from adjusting column widths automatically */
+  // }
+  
+  // .outer-container .table td {
+  //   width: 33.33%; /* Divide the table evenly into three columns */
+  // }
+  
+  /* Media query for smaller screens */
+  // @media (max-width: 768px) {
+  //   .outer-container {
+  //     max-width: 90%; /* Adjust the maximum width for smaller screens */
+  //   }
+  // }
 }
 
+.outer-table-container {
+  max-width: 100%; /* Set the maximum width to 100% of the parent container */
+  overflow: hidden; /* Hide any content that exceeds the container's width */
+
+  .outer-table {
+    width: 100%; /* Make the table occupy the full width of its parent container */
+    table-layout: fixed; /* Prevent the table from adjusting column widths automatically */
+  }
+}
 
 //
 // Change placement of captions with a class
@@ -151,5 +240,28 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
+  }
+}
+
+.table {
+  .full-height {
+    height: 1.8rem;
+  }
+  .has-arrow {
+    &:after {
+        width:  .5rem;
+        height: .5rem;
+        left: .5rem;
+        // top: 48%;
+        top: .75rem;
+        border-color: inherit;
+        -webkit-transform: rotate(-225deg) translateY(-50%);
+        transform: rotate(-225deg) translateY(-50%);
+
+      }
+  }
+  .mm-active>.has-arrow:after {
+    -webkit-transform: rotate(-135deg) translateY(-50%);
+    transform: rotate(-135deg) translateY(-50%);
   }
 }

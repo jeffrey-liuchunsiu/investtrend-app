@@ -20,14 +20,14 @@ import Card4 from "./../../../../images/card/card4.jpg";
 SwiperCore.use([FreeMode, Scrollbar, Mousewheel]);
 
 const swiperBlog = [
-  { image: Card1, icon: <IconBlog1 />, strategy: "SuperTrend" },
-  { image: Card2, icon: <IconBlog2 />, strategy: "EMA" },
-  { image: Card3, icon: <IconBlog2 />, strategy: "Strategy3" },
-  { image: Card4, icon: <IconBlog2 />, strategy: "Strategy4" },
-  { image: Card1, icon: <IconBlog1 />, strategy: "Strategy5" },
-  { image: Card2, icon: <IconBlog2 />, strategy: "Strategy6" },
-  { image: Card3, icon: <IconBlog2 />, strategy: "Strategy7" },
-  { image: Card4, icon: <IconBlog2 />, strategy: "Strategy8" },
+  { image: Card1, icon: <IconBlog1 /> },
+  { image: Card2, icon: <IconBlog2 /> },
+  { image: Card3, icon: <IconBlog2 /> },
+  { image: Card4, icon: <IconBlog2 /> },
+  { image: Card1, icon: <IconBlog1 /> },
+  { image: Card2, icon: <IconBlog2 /> },
+  { image: Card3, icon: <IconBlog2 /> },
+  { image: Card4, icon: <IconBlog2 /> },
 ];
 
 function IconBlog1() {
@@ -139,8 +139,8 @@ export default function SwiperSlider2() {
                     <span>08/21</span>
                   </div>
                   <div className="text-white">
-                    <p className="fs-12 mb-1 op6">Strategy</p>
-                    <span>{data.strategy}</span>
+                    <p className="fs-12 mb-1 op6">CARD HOLDER</p>
+                    <span>Marquezz Silalahi</span>
                   </div>
                 </div>
               </div>

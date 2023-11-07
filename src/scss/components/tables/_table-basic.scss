@@ -368,3 +368,51 @@ table.table{
 		}
 	}
 }
+
+// .outer-container {
+// 	&-tiny {
+// 		// @include media-breakpoint-down(xs) {
+// 			max-width: 90%;
+// 		// }
+// 		.table {
+// 			width: 100%; /* Make the table occupy the full width of its parent container */
+// 			table-layout: fixed; /* Prevent the table from adjusting column widths automatically */
+// 		}
+// 	}
+
+// 	&-sm {
+// 		// @include media-breakpoint-down(sm) {
+// 			max-width: 90% !important;
+// 		// }
+// 		.table {
+// 			width: 100%; /* Make the table occupy the full width of its parent container */
+// 			table-layout: fixed; /* Prevent the table from adjusting column widths automatically */
+// 		}
+// 	}
+
+// 	&-md {
+// 		// @include media-breakpoint-down(sm) {
+// 			max-width: 90% !important;
+// 		// }
+// 		.table {
+// 			width: 100%; /* Make the table occupy the full width of its parent container */
+// 			table-layout: fixed; /* Prevent the table from adjusting column widths automatically */
+// 		}
+// 	}
+
+// 	&-lg {
+// 		max-width: 90% !important;
+// 		.table {
+// 			width: 100%; /* Make the table occupy the full width of its parent container */
+// 			table-layout: fixed; /* Prevent the table from adjusting column widths automatically */
+// 		}
+// 	}
+
+// 	&-xl {
+// 		max-width: 90% !important;
+// 		.table {
+// 			width: 100%; /* Make the table occupy the full width of its parent container */
+// 			table-layout: fixed; /* Prevent the table from adjusting column widths automatically */
+// 		}
+// 	}
+// }
